@@ -405,6 +405,94 @@ func (x *InitAppResponse) GetAppId() int64 {
 	return 0
 }
 
+type DestroyAppRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AppId         int64                  `protobuf:"varint,1,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DestroyAppRequest) Reset() {
+	*x = DestroyAppRequest{}
+	mi := &file_sso_sso_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DestroyAppRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DestroyAppRequest) ProtoMessage() {}
+
+func (x *DestroyAppRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DestroyAppRequest.ProtoReflect.Descriptor instead.
+func (*DestroyAppRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *DestroyAppRequest) GetAppId() int64 {
+	if x != nil {
+		return x.AppId
+	}
+	return 0
+}
+
+type DestroyAppResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Response      string                 `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DestroyAppResponse) Reset() {
+	*x = DestroyAppResponse{}
+	mi := &file_sso_sso_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DestroyAppResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DestroyAppResponse) ProtoMessage() {}
+
+func (x *DestroyAppResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DestroyAppResponse.ProtoReflect.Descriptor instead.
+func (*DestroyAppResponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *DestroyAppResponse) GetResponse() string {
+	if x != nil {
+		return x.Response
+	}
+	return ""
+}
+
 var File_sso_sso_proto protoreflect.FileDescriptor
 
 const file_sso_sso_proto_rawDesc = "" +
@@ -429,12 +517,18 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x16\n" +
 	"\x06secret\x18\x02 \x01(\tR\x06secret\"(\n" +
 	"\x0fInitAppResponse\x12\x15\n" +
-	"\x06app_id\x18\x01 \x01(\x03R\x05appId2\xe3\x01\n" +
+	"\x06app_id\x18\x01 \x01(\x03R\x05appId\"*\n" +
+	"\x11DestroyAppRequest\x12\x15\n" +
+	"\x06app_id\x18\x01 \x01(\x03R\x05appId\"0\n" +
+	"\x12DestroyAppResponse\x12\x1a\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse2\xa4\x02\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.auth.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x126\n" +
 	"\aIsAdmin\x12\x14.auth.IsAdminRequest\x1a\x15.auth.IsAdminResponse\x126\n" +
-	"\aInitApp\x12\x14.auth.InitAppRequest\x1a\x15.auth.InitAppResponseB\x13Z\x11cute.sso.v1;ssov1b\x06proto3"
+	"\aInitApp\x12\x14.auth.InitAppRequest\x1a\x15.auth.InitAppResponse\x12?\n" +
+	"\n" +
+	"DestroyApp\x12\x17.auth.DestroyAppRequest\x1a\x18.auth.DestroyAppResponseB\x13Z\x11cute.sso.v1;ssov1b\x06proto3"
 
 var (
 	file_sso_sso_proto_rawDescOnce sync.Once
@@ -448,28 +542,32 @@ func file_sso_sso_proto_rawDescGZIP() []byte {
 	return file_sso_sso_proto_rawDescData
 }
 
-var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_sso_sso_proto_goTypes = []any{
-	(*RegisterRequest)(nil),  // 0: auth.RegisterRequest
-	(*RegisterResponse)(nil), // 1: auth.RegisterResponse
-	(*LoginRequest)(nil),     // 2: auth.LoginRequest
-	(*LoginResponse)(nil),    // 3: auth.LoginResponse
-	(*IsAdminRequest)(nil),   // 4: auth.IsAdminRequest
-	(*IsAdminResponse)(nil),  // 5: auth.IsAdminResponse
-	(*InitAppRequest)(nil),   // 6: auth.InitAppRequest
-	(*InitAppResponse)(nil),  // 7: auth.InitAppResponse
+	(*RegisterRequest)(nil),    // 0: auth.RegisterRequest
+	(*RegisterResponse)(nil),   // 1: auth.RegisterResponse
+	(*LoginRequest)(nil),       // 2: auth.LoginRequest
+	(*LoginResponse)(nil),      // 3: auth.LoginResponse
+	(*IsAdminRequest)(nil),     // 4: auth.IsAdminRequest
+	(*IsAdminResponse)(nil),    // 5: auth.IsAdminResponse
+	(*InitAppRequest)(nil),     // 6: auth.InitAppRequest
+	(*InitAppResponse)(nil),    // 7: auth.InitAppResponse
+	(*DestroyAppRequest)(nil),  // 8: auth.DestroyAppRequest
+	(*DestroyAppResponse)(nil), // 9: auth.DestroyAppResponse
 }
 var file_sso_sso_proto_depIdxs = []int32{
 	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
 	2, // 1: auth.Auth.Login:input_type -> auth.LoginRequest
 	4, // 2: auth.Auth.IsAdmin:input_type -> auth.IsAdminRequest
 	6, // 3: auth.Auth.InitApp:input_type -> auth.InitAppRequest
-	1, // 4: auth.Auth.Register:output_type -> auth.RegisterResponse
-	3, // 5: auth.Auth.Login:output_type -> auth.LoginResponse
-	5, // 6: auth.Auth.IsAdmin:output_type -> auth.IsAdminResponse
-	7, // 7: auth.Auth.InitApp:output_type -> auth.InitAppResponse
-	4, // [4:8] is the sub-list for method output_type
-	0, // [0:4] is the sub-list for method input_type
+	8, // 4: auth.Auth.DestroyApp:input_type -> auth.DestroyAppRequest
+	1, // 5: auth.Auth.Register:output_type -> auth.RegisterResponse
+	3, // 6: auth.Auth.Login:output_type -> auth.LoginResponse
+	5, // 7: auth.Auth.IsAdmin:output_type -> auth.IsAdminResponse
+	7, // 8: auth.Auth.InitApp:output_type -> auth.InitAppResponse
+	9, // 9: auth.Auth.DestroyApp:output_type -> auth.DestroyAppResponse
+	5, // [5:10] is the sub-list for method output_type
+	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -486,7 +584,7 @@ func file_sso_sso_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sso_sso_proto_rawDesc), len(file_sso_sso_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

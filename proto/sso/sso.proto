@@ -9,6 +9,7 @@ service Auth{
     rpc Login (LoginRequest) returns (LoginResponse);
     rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
     rpc InitApp (InitAppRequest) returns (InitAppResponse);
+    rpc DestroyApp (DestroyAppRequest) returns (DestroyAppResponse);
 }
 
 message RegisterRequest{
@@ -45,4 +46,12 @@ message InitAppRequest{
 
 message InitAppResponse{
     int64 app_id = 1;
+}
+
+message DestroyAppRequest{
+    int64 app_id = 1;
+}
+
+message DestroyAppResponse{
+    string response = 1;
 }
