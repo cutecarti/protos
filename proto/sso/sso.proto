@@ -55,3 +55,7 @@ message DestroyAppRequest{
 message DestroyAppResponse{
     string response = 1;
 }
+
+message HasAliveRequest{
+    int64 app_id = 1;
+}

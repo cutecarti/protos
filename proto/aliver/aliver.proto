@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package alive;
+
+option go_package = "cute.aliver.v1;aliverv1";
+
+service Alive{
+    rpc Alive(HasAliveRequest) returns (HasAliveResponse);
+}
+
+message HasAliveRequest{
+
+}
+message HasAliveResponse{
+    bool response = 1;
+}

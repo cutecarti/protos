@@ -493,6 +493,50 @@ func (x *DestroyAppResponse) GetResponse() string {
 	return ""
 }
 
+type HasAliveRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AppId         int64                  `protobuf:"varint,1,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HasAliveRequest) Reset() {
+	*x = HasAliveRequest{}
+	mi := &file_sso_sso_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HasAliveRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HasAliveRequest) ProtoMessage() {}
+
+func (x *HasAliveRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HasAliveRequest.ProtoReflect.Descriptor instead.
+func (*HasAliveRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *HasAliveRequest) GetAppId() int64 {
+	if x != nil {
+		return x.AppId
+	}
+	return 0
+}
+
 var File_sso_sso_proto protoreflect.FileDescriptor
 
 const file_sso_sso_proto_rawDesc = "" +
@@ -521,7 +565,9 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x11DestroyAppRequest\x12\x15\n" +
 	"\x06app_id\x18\x01 \x01(\x03R\x05appId\"0\n" +
 	"\x12DestroyAppResponse\x12\x1a\n" +
-	"\bresponse\x18\x01 \x01(\tR\bresponse2\xa4\x02\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse\"(\n" +
+	"\x0fHasAliveRequest\x12\x15\n" +
+	"\x06app_id\x18\x01 \x01(\x03R\x05appId2\xa4\x02\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.auth.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x126\n" +
@@ -542,7 +588,7 @@ func file_sso_sso_proto_rawDescGZIP() []byte {
 	return file_sso_sso_proto_rawDescData
 }
 
-var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_sso_sso_proto_goTypes = []any{
 	(*RegisterRequest)(nil),    // 0: auth.RegisterRequest
 	(*RegisterResponse)(nil),   // 1: auth.RegisterResponse
@@ -554,6 +600,7 @@ var file_sso_sso_proto_goTypes = []any{
 	(*InitAppResponse)(nil),    // 7: auth.InitAppResponse
 	(*DestroyAppRequest)(nil),  // 8: auth.DestroyAppRequest
 	(*DestroyAppResponse)(nil), // 9: auth.DestroyAppResponse
+	(*HasAliveRequest)(nil),    // 10: auth.HasAliveRequest
 }
 var file_sso_sso_proto_depIdxs = []int32{
 	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
@@ -584,7 +631,7 @@ func file_sso_sso_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sso_sso_proto_rawDesc), len(file_sso_sso_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
