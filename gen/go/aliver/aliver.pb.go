@@ -105,12 +105,12 @@ var File_aliver_aliver_proto protoreflect.FileDescriptor
 
 const file_aliver_aliver_proto_rawDesc = "" +
 	"\n" +
-	"\x13aliver/aliver.proto\x12\x05alive\"\x11\n" +
+	"\x13aliver/aliver.proto\x12\x06aliver\"\x11\n" +
 	"\x0fHasAliveRequest\".\n" +
 	"\x10HasAliveResponse\x12\x1a\n" +
-	"\bresponse\x18\x01 \x01(\bR\bresponse2A\n" +
-	"\x05Alive\x128\n" +
-	"\x05Alive\x12\x16.alive.HasAliveRequest\x1a\x17.alive.HasAliveResponseB\x19Z\x17cute.aliver.v1;aliverv1b\x06proto3"
+	"\bresponse\x18\x01 \x01(\bR\bresponse2C\n" +
+	"\x05Alive\x12:\n" +
+	"\x05Alive\x12\x17.aliver.HasAliveRequest\x1a\x18.aliver.HasAliveResponseB\x19Z\x17cute.aliver.v1;aliverv1b\x06proto3"
 
 var (
 	file_aliver_aliver_proto_rawDescOnce sync.Once
@@ -126,12 +126,12 @@ func file_aliver_aliver_proto_rawDescGZIP() []byte {
 
 var file_aliver_aliver_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_aliver_aliver_proto_goTypes = []any{
-	(*HasAliveRequest)(nil),  // 0: alive.HasAliveRequest
-	(*HasAliveResponse)(nil), // 1: alive.HasAliveResponse
+	(*HasAliveRequest)(nil),  // 0: aliver.HasAliveRequest
+	(*HasAliveResponse)(nil), // 1: aliver.HasAliveResponse
 }
 var file_aliver_aliver_proto_depIdxs = []int32{
-	0, // 0: alive.Alive.Alive:input_type -> alive.HasAliveRequest
-	1, // 1: alive.Alive.Alive:output_type -> alive.HasAliveResponse
+	0, // 0: aliver.Alive.Alive:input_type -> aliver.HasAliveRequest
+	1, // 1: aliver.Alive.Alive:output_type -> aliver.HasAliveResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

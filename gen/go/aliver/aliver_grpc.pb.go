@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Alive_Alive_FullMethodName = "/alive.Alive/Alive"
+	Alive_Alive_FullMethodName = "/aliver.Alive/Alive"
 )
 
 // AliveClient is the client API for Alive service.
@@ -108,7 +108,7 @@ func _Alive_Alive_Handler(srv interface{}, ctx context.Context, dec func(interfa
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Alive_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "alive.Alive",
+	ServiceName: "aliver.Alive",
 	HandlerType: (*AliveServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
