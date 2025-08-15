@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package alive;
+package aliver;
 
 option go_package = "cute.aliver.v1;aliverv1";
 
