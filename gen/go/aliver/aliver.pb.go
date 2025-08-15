@@ -23,7 +23,6 @@ const (
 
 type HasAliveRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AppId         int64                  `protobuf:"varint,1,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -58,16 +57,10 @@ func (*HasAliveRequest) Descriptor() ([]byte, []int) {
 	return file_aliver_aliver_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *HasAliveRequest) GetAppId() int64 {
-	if x != nil {
-		return x.AppId
-	}
-	return 0
-}
-
 type HasAliveResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Response      bool                   `protobuf:"varint,1,opt,name=response,proto3" json:"response,omitempty"`
+	AppId         int64                  `protobuf:"varint,2,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -109,15 +102,22 @@ func (x *HasAliveResponse) GetResponse() bool {
 	return false
 }
 
+func (x *HasAliveResponse) GetAppId() int64 {
+	if x != nil {
+		return x.AppId
+	}
+	return 0
+}
+
 var File_aliver_aliver_proto protoreflect.FileDescriptor
 
 const file_aliver_aliver_proto_rawDesc = "" +
 	"\n" +
-	"\x13aliver/aliver.proto\x12\x06aliver\"(\n" +
-	"\x0fHasAliveRequest\x12\x15\n" +
-	"\x06app_id\x18\x01 \x01(\x03R\x05appId\".\n" +
+	"\x13aliver/aliver.proto\x12\x06aliver\"\x11\n" +
+	"\x0fHasAliveRequest\"E\n" +
 	"\x10HasAliveResponse\x12\x1a\n" +
-	"\bresponse\x18\x01 \x01(\bR\bresponse2C\n" +
+	"\bresponse\x18\x01 \x01(\bR\bresponse\x12\x15\n" +
+	"\x06app_id\x18\x02 \x01(\x03R\x05appId2C\n" +
 	"\x05Alive\x12:\n" +
 	"\x05Alive\x12\x17.aliver.HasAliveRequest\x1a\x18.aliver.HasAliveResponseB\x19Z\x17cute.aliver.v1;aliverv1b\x06proto3"
 

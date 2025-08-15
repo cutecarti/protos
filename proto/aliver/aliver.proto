@@ -9,8 +9,9 @@ service Alive{
 }
 
 message HasAliveRequest{
-    int64 app_id = 1;
+
 }
 message HasAliveResponse{
     bool response = 1;
+    int64 app_id = 2;
 }
